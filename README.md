@@ -2,14 +2,23 @@
 
 Claude AI를 위한 전문 에이전트 정의 모음집입니다. 각 에이전트는 특정 작업을 전문적으로 수행하도록 설계되었습니다.
 
+## 🚀 빠른 시작
+
+**완전 초보자**라면? → **[5분 만에 첫 Agent 만들기](QUICKSTART_GUIDE.md)** 📖
+
+복사-붙여넣기만으로 바로 사용할 수 있는 단계별 가이드입니다!
+
 ## 📚 목차
 
-- [Agents vs Skills 차이점](#agents-vs-skills-차이점)
-- [Agent 구성 방법](#agent-구성-방법)
-- [현재 보유 Agent](#현재-보유-agent)
-- [Agent 사용법](#agent-사용법)
-- [새로운 Agent 만들기](#새로운-agent-만들기)
-- [Agent 관리](#agent-관리)
+- [🚀 빠른 시작](#빠른-시작) ← **초보자는 여기서 시작!**
+- [🔍 Agents vs Skills 차이점](#agents-vs-skills-차이점)
+- [🏗️ Agent 구성 방법](#agent-구성-방법)
+- [📦 현재 보유 Agent](#현재-보유-agent)
+- [🚀 Agent 사용법](#agent-사용법)
+- [🛠️ 새로운 Agent 만들기](#새로운-agent-만들기)
+- [🔧 Agent 관리](#agent-관리)
+
+> 💡 **처음 사용하시나요?** 위의 "빠른 시작" 링크를 클릭해서 5분 만에 첫 Agent를 만들어보세요!
 
 ## 🔍 Agents vs Skills 차이점
 
@@ -141,25 +150,56 @@ You have deep expertise in [구체적 전문성] and [핵심 스킬].
 
 ## 🚀 Agent 사용법
 
-### 1. 직접 호출
-```markdown
-@agent-name을 사용해서 [구체적 작업 요청]
+### 1. 기본 사용법 (가장 쉬움!)
+Claude와 대화할 때 이렇게 말해보세요:
+
+```
+@blog-writer를 사용해서 "재택근무 생산성 높이는 법" 블로그 글 써주세요.
 ```
 
-### 2. Task 도구 활용
-```markdown
-Task 도구를 사용해서 carousel-content-strategist를 호출해주세요.
+```  
+@email-marketer 신제품 출시 이메일 만들어주세요.
+```
+
+```
+@social-designer 인스타그램용 제품 소개 포스트 디자인해주세요.
+```
+
+### 2. 더 자세한 요청
+```
+@carousel-content-strategist를 사용해서 Instagram 캐러셀 전략을 세워주세요.
+
 주제: 프리랜서를 위한 생산성 팁
-타겟: 25-35세 프리랜서
+타겟: 25-35세 프리랜서  
 톤: 동기부여적이지만 실용적
-목표: 팔로워 증가
+목표: 팔로워 증가와 참여도 향상
 ```
 
-### 3. 연쇄 작업
-```markdown
-1. 먼저 전략가로 브리프 작성
-2. 그 결과를 카피라이터에게 전달
-3. 카피를 받아서 디자이너가 슬라이드 제작
+### 3. 여러 Agent 연결해서 사용
+```
+1단계: @carousel-content-strategist로 전략 수립
+2단계: 그 결과를 @instagram-carousel-copywriter에게 전달해서 카피 작성  
+3단계: 완성된 카피를 @instagram-carousel-generator로 HTML 슬라이드 제작
+```
+
+### 💡 실제 사용 예시
+
+**블로그 글 작성**:
+```
+@blog-writer "ChatGPT 활용법" 주제로 초보자용 블로그 글 3000자로 써주세요. 
+SEO 키워드는 "ChatGPT 사용법, AI 도구, 업무 효율성"으로 해주세요.
+```
+
+**이메일 마케팅**:
+```  
+@email-marketer 우리 온라인 코스 홍보용 이메일 시퀀스 5개 만들어주세요.
+타겟은 마케팅 담당자이고, 따뜻하면서 전문적인 톤으로 해주세요.
+```
+
+**소셜미디어 컨텐츠**:
+```
+@social-designer LinkedIn용 개인 브랜딩 포스트 디자인해주세요.  
+주제는 "원격근무에서 성과내기"이고, 전문적이면서 접근하기 쉬운 느낌으로 해주세요.
 ```
 
 ## 🛠️ 새로운 Agent 만들기
