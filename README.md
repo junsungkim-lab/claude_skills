@@ -4,13 +4,28 @@ Claude AI를 위한 전문 에이전트 정의 모음집입니다. 각 에이전
 
 ## 🚀 빠른 시작
 
+### 📥 **기존 Agent 바로 사용하기** (1분)
+GitHub에서 Agent를 다운받아 Claude에서 바로 사용하세요!
+
+```bash
+# 원하는 Agent 다운로드 (예시)
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/carousel-content-strategist.md
+
+# Claude Desktop에서 파일 업로드 하거나
+# Claude.ai에서 파일 내용을 복사-붙여넣기 후 "이 Agent를 사용해서..." 요청
+```
+
+**→ [전체 Agent 다운로드 링크 모음](#-agent-다운로드-links) 바로가기**
+
+### 📚 **새로운 Agent 만들어보기** (5분)  
 **완전 초보자**라면? → **[5분 만에 첫 Agent 만들기](QUICKSTART_GUIDE.md)** 📖
 
 복사-붙여넣기만으로 바로 사용할 수 있는 단계별 가이드입니다!
 
 ## 📚 목차
 
-- [🚀 빠른 시작](#빠른-시작) ← **초보자는 여기서 시작!**
+- [🚀 빠른 시작](#빠른-시작) ← **여기서 시작하세요!**
+- [📥 Agent 다운로드 Links](#-agent-다운로드-links) ← **바로 사용 가능!**
 - [🎬 워크플로우 실제 예시](WORKFLOW_EXAMPLE.md) ← **Agent 연쇄 호출 과정**
 - [🔍 Agents vs Skills 차이점](#agents-vs-skills-차이점)
 - [🏗️ Agent 구성 방법](#agent-구성-방법)
@@ -19,7 +34,7 @@ Claude AI를 위한 전문 에이전트 정의 모음집입니다. 각 에이전
 - [🛠️ 새로운 Agent 만들기](#새로운-agent-만들기)
 - [🔧 Agent 관리](#agent-관리)
 
-> 💡 **처음 사용하시나요?** 위의 "빠른 시작" 링크를 클릭해서 5분 만에 첫 Agent를 만들어보세요!  
+> 💡 **바로 사용하고 싶다면?** "Agent 다운로드 Links"에서 Agent 파일을 받아서 Claude에 업로드하세요!  
 > 🎭 **Agent들의 협업이 궁금하다면?** "워크플로우 실제 예시"에서 오케스트레이터가 다른 Agent들을 어떻게 조율하는지 봐보세요!
 
 ## 🔍 Agents vs Skills 차이점
@@ -118,6 +133,17 @@ You have deep expertise in [구체적 전문성] and [핵심 스킬].
 
 ## 📦 현재 보유 Agent
 
+### 🎭 오케스트레이터란?
+**오케스트레이터(Orchestrator)**는 여러 Agent들을 순서대로 조율하는 **프로젝트 매니저** 역할입니다.
+
+🎯 **왜 필요한가요?**
+- 복잡한 작업을 여러 전문가가 나눠서 처리
+- 각 Agent의 결과물을 다음 Agent에게 전달
+- 전체 프로세스 품질 관리
+- 사용자는 한 번만 요청하면 완성품을 받음
+
+💡 **사용법**: `@orchestrator-name [전체 요구사항]` → 모든 Agent가 자동으로 순서대로 작업!
+
 ### Instagram 캐러셀 제작 팀
 
 1. **carousel-content-strategist** 🎯
@@ -135,10 +161,10 @@ You have deep expertise in [구체적 전문성] and [핵심 스킬].
    - **입력**: 최종 카피
    - **출력**: 1080x1440px HTML 파일들
 
-4. **instagram-carousel-orchestrator** 🎭
-   - **역할**: 전체 제작 프로세스 관리
-   - **입력**: 초기 요구사항
-   - **출력**: 완성된 캐러셀 (다른 Agent들 조율)
+4. **instagram-carousel-orchestrator** 🎭 ⭐
+   - **역할**: 전체 제작 프로세스 관리 (오케스트레이터!)
+   - **입력**: 초기 요구사항만
+   - **출력**: 완성된 캐러셀 (위 1-3번 + 5번 Agent 자동 조율)
 
 5. **slide-production-exporter** 📤
    - **역할**: 최종 PNG 익스포트 및 배포
@@ -347,6 +373,70 @@ git commit -m "feat: Add new social media strategist agent"
 
 - 이슈: [GitHub Issues](https://github.com/junsungkim-lab/claude_skills/issues)
 - 토론: [GitHub Discussions](https://github.com/junsungkim-lab/claude_skills/discussions)
+
+## 📥 Agent 다운로드 Links
+
+### 🎨 Instagram 캐러셀 제작팀 (전체 다운로드)
+
+**🎭 추천: 오케스트레이터 단독 사용**
+```bash
+# 이것만 다운받으면 모든 작업이 가능!
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-orchestrator.md
+```
+
+**🔧 개별 Agent들 (고급 사용자용)**
+```bash
+# 1. 전략가
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/carousel-content-strategist.md
+
+# 2. 카피라이터  
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-copywriter.md
+
+# 3. HTML 디자이너
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-generator.md
+
+# 4. PNG 익스포터
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/slide-production-exporter.md
+```
+
+**📦 전체 일괄 다운로드**
+```bash
+# 모든 Agent 한 번에 다운로드
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/carousel-content-strategist.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-copywriter.md  
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-generator.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-orchestrator.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/slide-production-exporter.md
+```
+
+### 🚀 Claude에서 사용하는 방법
+
+#### 방법 1: 파일 업로드 (Claude Desktop 앱)
+1. 위 명령어로 Agent `.md` 파일 다운로드
+2. Claude Desktop 앱에서 📎 버튼으로 파일 업로드
+3. "이 Agent를 사용해서 [작업 요청]"
+
+#### 방법 2: 복사-붙여넣기 (Claude.ai 웹)
+1. [GitHub에서 Agent 파일](https://github.com/junsungkim-lab/claude_skills) 열기
+2. 파일 내용 전체 복사
+3. Claude.ai에 붙여넣기 후 "이 Agent로 작업해줘"
+
+#### 방법 3: 즐겨찾기 저장 (추천!)
+```
+# 자주 쓰는 Agent는 Claude에서 이렇게 저장
+"instagram-carousel-orchestrator 내용을 기억해줘. 
+앞으로 '@오케스트레이터'라고 하면 이 Agent로 작업해줘."
+```
+
+### 💡 사용 예시
+```
+# 오케스트레이터 사용
+@오케스트레이터를 사용해서 "재택근무 생산성 팁" Instagram 캐러셀 만들어줘.
+타겟: 25-35세 직장인, 톤: 친근하고 실용적
+
+# 개별 Agent 사용  
+@carousel-content-strategist를 사용해서 "AI 도구 활용법" 주제 전략 짜줘.
+```
 
 ---
 
