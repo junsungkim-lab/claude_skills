@@ -11,6 +11,7 @@ Claude AI를 위한 전문 에이전트 정의 모음집입니다. 각 에이전
 ## 📚 목차
 
 - [🚀 빠른 시작](#빠른-시작) ← **초보자는 여기서 시작!**
+- [🎬 워크플로우 실제 예시](WORKFLOW_EXAMPLE.md) ← **Agent 연쇄 호출 과정**
 - [🔍 Agents vs Skills 차이점](#agents-vs-skills-차이점)
 - [🏗️ Agent 구성 방법](#agent-구성-방법)
 - [📦 현재 보유 Agent](#현재-보유-agent)
@@ -18,7 +19,8 @@ Claude AI를 위한 전문 에이전트 정의 모음집입니다. 각 에이전
 - [🛠️ 새로운 Agent 만들기](#새로운-agent-만들기)
 - [🔧 Agent 관리](#agent-관리)
 
-> 💡 **처음 사용하시나요?** 위의 "빠른 시작" 링크를 클릭해서 5분 만에 첫 Agent를 만들어보세요!
+> 💡 **처음 사용하시나요?** 위의 "빠른 시작" 링크를 클릭해서 5분 만에 첫 Agent를 만들어보세요!  
+> 🎭 **Agent들의 협업이 궁금하다면?** "워크플로우 실제 예시"에서 오케스트레이터가 다른 Agent들을 어떻게 조율하는지 봐보세요!
 
 ## 🔍 Agents vs Skills 차이점
 
@@ -148,6 +150,9 @@ You have deep expertise in [구체적 전문성] and [핵심 스킬].
 사용자 요청 → Orchestrator → Strategist → Copywriter → Generator → Exporter → 완성
 ```
 
+> 🎬 **실제 동작 과정이 궁금하다면?** → **[워크플로우 실제 예시 보기](WORKFLOW_EXAMPLE.md)**  
+> Instagram 캐러셀을 만드는 전체 과정을 Agent들의 실제 대화로 보여줍니다!
+
 ## 🚀 Agent 사용법
 
 ### 1. 기본 사용법 (가장 쉬움!)
@@ -175,7 +180,18 @@ Claude와 대화할 때 이렇게 말해보세요:
 목표: 팔로워 증가와 참여도 향상
 ```
 
-### 3. 여러 Agent 연결해서 사용
+### 3. 오케스트레이터로 한 번에 처리 (🔥 추천!)
+```
+@instagram-carousel-orchestrator를 사용해서 
+"프리랜서를 위한 시간 관리 팁" Instagram 캐러셀을 만들어주세요.
+
+타겟: 25-35세 프리랜서
+목표: 팔로워 증가  
+톤: 실용적이고 친근한
+```
+→ 오케스트레이터가 자동으로 전략가 → 카피라이터 → 디자이너 → 익스포터 순서로 호출!
+
+### 4. 수동으로 Agent 연결해서 사용
 ```
 1단계: @carousel-content-strategist로 전략 수립
 2단계: 그 결과를 @instagram-carousel-copywriter에게 전달해서 카피 작성  
