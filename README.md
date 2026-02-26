@@ -11,7 +11,7 @@ GitHub에서 Agent를 다운받아 Claude에서 바로 사용하세요!
 
 ```bash
 # 원하는 Agent 다운로드 (예시)
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/carousel-content-strategist.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/carousel-content-strategist.md
 
 # Claude Desktop에서 파일 업로드 하거나
 # Claude.ai에서 파일 내용을 복사-붙여넣기 후 "이 Agent를 사용해서..." 요청
@@ -20,7 +20,7 @@ curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/caro
 **→ [전체 Agent 다운로드 링크 모음](#-agent-다운로드-links) 바로가기**
 
 ### 📚 **새로운 Agent 만들어보기** (5분)  
-**완전 초보자**라면? → **[5분 만에 첫 Agent 만들기](QUICKSTART_GUIDE.md)** 📖
+**완전 초보자**라면? → **[5분 만에 첫 Agent 만들기](docs/QUICKSTART_GUIDE.md)** 📖
 
 복사-붙여넣기만으로 바로 사용할 수 있는 단계별 가이드입니다!
 
@@ -28,7 +28,7 @@ curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/caro
 
 - [🚀 빠른 시작](#빠른-시작) ← **여기서 시작하세요!**
 - [📥 Agent 다운로드 Links](#-agent-다운로드-links) ← **바로 사용 가능!**
-- [🎬 워크플로우 실제 예시](WORKFLOW_EXAMPLE.md) ← **Agent 연쇄 호출 과정**
+- [🎬 워크플로우 실제 예시](docs/WORKFLOW_EXAMPLE.md) ← **Agent 연쇄 호출 과정**
 - [🔍 Agents vs Skills 차이점](#agents-vs-skills-차이점)
 - [🏗️ Agent 구성 방법](#agent-구성-방법)
 - [📦 현재 보유 Agent](#현재-보유-agent)
@@ -205,7 +205,7 @@ You have deep expertise in [구체적 전문성] and [핵심 스킬].
 
 ---
 
-> 🎬 **실제 동작 과정이 궁금하다면?** → **[워크플로우 실제 예시 보기](WORKFLOW_EXAMPLE.md)**  
+> 🎬 **실제 동작 과정이 궁금하다면?** → **[워크플로우 실제 예시 보기](docs/WORKFLOW_EXAMPLE.md)**  
 > Instagram 캐러셀을 만드는 전체 과정을 Agent들의 실제 대화로 보여줍니다!
 
 ## 🚀 Agent 사용법
@@ -290,7 +290,7 @@ SEO 키워드는 "ChatGPT 사용법, AI 도구, 업무 효율성"으로 해주�
 
 #### Step 1: Meta Prompt 다운로드
 ```bash
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/claude-agent-builder-meta-prompt.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/meta-tools/claude-agent-builder-meta-prompt.md
 ```
 
 #### Step 2: 파일 열어서 워크플로우 정보 입력
@@ -471,49 +471,49 @@ git commit -m "feat: Add new social media strategist agent"
 **🎭 추천: 오케스트레이터 단독 사용**
 ```bash
 # 이것만 다운받으면 모든 작업이 가능!
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-orchestrator.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/instagram-carousel-orchestrator.md
 ```
 
 **🔧 개별 Agent들 (고급 사용자용)**
 ```bash
 # 1. 전략가
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/carousel-content-strategist.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/carousel-content-strategist.md
 
 # 2. 카피라이터  
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-copywriter.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/instagram-carousel-copywriter.md
 
 # 3. HTML 디자이너
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-generator.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/instagram-carousel-generator.md
 
 # 4. PNG 익스포터
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/slide-production-exporter.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/slide-production-exporter.md
 ```
 
 ### 🧭 Routing & Dispatch
 
 ```bash
 # Instagram 콘텐츠 스타일 자동 라우팅
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/card-dispatcher.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/routing/card-dispatcher.md
 ```
 
 ### 🛠️ Meta Tools
 
 ```bash
 # 🔥 NEW! Agent 시스템 자동 생성기
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/claude-agent-builder-meta-prompt.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/meta-tools/claude-agent-builder-meta-prompt.md
 ```
 
 ### 📦 전체 일괄 다운로드
 
 ```bash
 # 모든 Agent 한 번에 다운로드
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/carousel-content-strategist.md
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-copywriter.md  
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-generator.md
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-orchestrator.md
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/slide-production-exporter.md
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/card-dispatcher.md
-curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/claude-agent-builder-meta-prompt.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/carousel-content-strategist.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/instagram-carousel-copywriter.md  
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/instagram-carousel-generator.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/instagram-carousel-orchestrator.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-content/slide-production-exporter.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/routing/card-dispatcher.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/meta-tools/claude-agent-builder-meta-prompt.md
 ```
 
 ### 🚀 Claude에서 사용하는 방법
