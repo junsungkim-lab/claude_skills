@@ -1,5 +1,5 @@
 # Claude Agent Builder — Meta Prompt
-# 구독자 전용 | 이 프롬프트를 Claude 또는 ChatGPT에 그대로 복붙하세요
+# 이 프롬프트를 Claude 또는 ChatGPT에 그대로 복붙하세요
 
 ---
 

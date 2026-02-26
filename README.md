@@ -201,7 +201,7 @@ You have deep expertise in [구체적 전문성] and [핵심 스킬].
    - **역할**: 커스텀 Agent 시스템 자동 생성
    - **입력**: 워크플로우 정보, 디자인 요구사항
    - **출력**: 완성된 .md Agent 파일들 (복사 즉시 사용 가능)
-   - **특징**: 구독자 전용, Claude/ChatGPT에 복붙만으로 멀티 Agent 시스템 생성
+   - **특징**: Claude/ChatGPT에 복붙만으로 멀티 Agent 시스템 생성
 
 ---
 
