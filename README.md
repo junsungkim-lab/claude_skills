@@ -1,6 +1,8 @@
 # Claude Agents Collection 🤖
 
-Claude AI를 위한 전문 에이전트 정의 모음집입니다. 각 에이전트는 특정 작업을 전문적으로 수행하도록 설계되었습니다.
+Claude AI를 위한 전문 에이전트 정의 모음집입니다. Instagram 콘텐츠 제작부터 범용 워크플로우까지, 각 에이전트는 특정 작업을 전문적으로 수행하도록 설계되었습니다.
+
+**✨ 새로운 기능**: Agent 자동 생성 메타 프롬프트 포함! 당신만의 커스텀 Agent 시스템을 몇 분 만에 구축하세요.
 
 ## 🚀 빠른 시작
 
@@ -31,7 +33,8 @@ curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/caro
 - [🏗️ Agent 구성 방법](#agent-구성-방법)
 - [📦 현재 보유 Agent](#현재-보유-agent)
 - [🚀 Agent 사용법](#agent-사용법)
-- [🛠️ 새로운 Agent 만들기](#새로운-agent-만들기)
+- [🏗️ Agent 시스템 자동 생성하기 (Meta Prompt)](#agent-시스템-자동-생성하기-meta-prompt)
+- [🛠️ 수동으로 Agent 만들기 (고급 사용자)](#수동으로-agent-만들기-고급-사용자)
 - [🔧 Agent 관리](#agent-관리)
 
 > 💡 **바로 사용하고 싶다면?** "Agent 다운로드 Links"에서 Agent 파일을 받아서 Claude에 업로드하세요!  
@@ -144,7 +147,11 @@ You have deep expertise in [구체적 전문성] and [핵심 스킬].
 
 💡 **사용법**: `@orchestrator-name [전체 요구사항]` → 모든 Agent가 자동으로 순서대로 작업!
 
-### Instagram 캐러셀 제작 팀
+---
+
+## 🎨 Instagram Content Production
+
+### 마케팅 캐러셀 제작 팀 (1080×1440 세로)
 
 1. **carousel-content-strategist** 🎯
    - **역할**: 컨텐츠 전략 수립 및 리서치
@@ -152,7 +159,7 @@ You have deep expertise in [구체적 전문성] and [핵심 스킬].
    - **출력**: 전략적 브리프, 슬라이드별 구성안
 
 2. **instagram-carousel-copywriter** ✍️
-   - **역할**: 캐러셀 카피라이팅
+   - **역할**: 캐러셀 카피라이팅  
    - **입력**: 전략 브리프
    - **출력**: 슬라이드별 최종 텍스트
 
@@ -175,6 +182,28 @@ You have deep expertise in [구체적 전문성] and [핵심 스킬].
 ```
 사용자 요청 → Orchestrator → Strategist → Copywriter → Generator → Exporter → 완성
 ```
+
+---
+
+## 🧭 Routing & Dispatch
+
+6. **card-dispatcher** 🚦
+   - **역할**: Instagram 콘텐츠 스타일 라우팅
+   - **입력**: 모호한 콘텐츠 요청 ("카드뉴스 만들어줘")
+   - **출력**: 스타일 선택지 제시 → 적절한 orchestrator로 연결
+   - **특징**: 마케팅 캐러셀 vs 뉴스 카드뉴스 자동 분류 및 라우팅
+
+---
+
+## 🛠️ Meta Tools
+
+7. **claude-agent-builder-meta-prompt** 🏗️
+   - **역할**: 커스텀 Agent 시스템 자동 생성
+   - **입력**: 워크플로우 정보, 디자인 요구사항
+   - **출력**: 완성된 .md Agent 파일들 (복사 즉시 사용 가능)
+   - **특징**: 구독자 전용, Claude/ChatGPT에 복붙만으로 멀티 Agent 시스템 생성
+
+---
 
 > 🎬 **실제 동작 과정이 궁금하다면?** → **[워크플로우 실제 예시 보기](WORKFLOW_EXAMPLE.md)**  
 > Instagram 캐러셀을 만드는 전체 과정을 Agent들의 실제 대화로 보여줍니다!
@@ -244,7 +273,68 @@ SEO 키워드는 "ChatGPT 사용법, AI 도구, 업무 효율성"으로 해주�
 주제는 "원격근무에서 성과내기"이고, 전문적이면서 접근하기 쉬운 느낌으로 해주세요.
 ```
 
-## 🛠️ 새로운 Agent 만들기
+## 🏗️ Agent 시스템 자동 생성하기 (Meta Prompt)
+
+**🔥 NEW!** 이제 당신만의 Agent 시스템을 몇 분 만에 구축할 수 있습니다!
+
+### 📋 Meta Prompt란?
+
+**Claude Agent Builder Meta Prompt**는 워크플로우 정보를 입력하면 완성된 Agent .md 파일들을 자동으로 생성해주는 템플릿입니다.
+
+- ✅ **복붙만으로 사용**: 브라켓 정보만 수정하면 완성
+- ✅ **멀티 Agent 지원**: 3개 이상 Agent 시 오케스트레이터 자동 생성  
+- ✅ **시각적 출력 지원**: HTML→PNG 변환 시스템 포함
+- ✅ **Claude & ChatGPT 호환**: 두 플랫폼 모두에서 사용 가능
+
+### 🚀 사용법
+
+#### Step 1: Meta Prompt 다운로드
+```bash
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/claude-agent-builder-meta-prompt.md
+```
+
+#### Step 2: 파일 열어서 워크플로우 정보 입력
+```markdown
+**워크플로우 이름**: [YouTube Shorts 제작 파이프라인]
+**최종 목표**: [스크립트 → 자막 → 썸네일 HTML → PNG]
+**에이전트 목록**: 
+1. [script-writer]: [YouTube 스크립트 작성] → [주제] → [30초 스크립트]
+2. [subtitle-generator]: [자막 생성] → [스크립트] → [SRT 파일]  
+3. [thumbnail-designer]: [썸네일 HTML 제작] → [스크립트+자막] → [HTML]
+```
+
+#### Step 3: Claude 또는 ChatGPT에 복붙
+- 파일 내용 전체를 복사해서 Claude/ChatGPT에 붙여넣기
+- [대괄호] 부분만 본인 상황에 맞게 수정
+- 완성된 .md Agent 파일들을 받아서 바로 저장
+
+#### Step 4: Agent 파일들 저장 후 사용
+```bash
+# 생성된 Agent들을 ~/.claude/agents/ 폴더에 저장
+# 오케스트레이터부터 호출하면 전체 워크플로우 자동 실행!
+```
+
+### 💡 Meta Prompt 활용 예시
+
+**가능한 워크플로우들:**
+- 📺 YouTube 콘텐츠 제작 (기획→스크립트→썸네일→편집 가이드)
+- 📧 이메일 마케팅 시퀀스 (전략→시퀀스 작성→HTML 템플릿→자동화 설정)  
+- 📱 앱 기획서 작성 (리서치→와이어프레임→기능 명세→UI 가이드)
+- 📊 데이터 분석 리포트 (수집→분석→시각화→리포트 작성)
+- 🎨 브랜드 아이덴티티 구축 (리서치→컨셉→로고→가이드라인)
+
+### 🎯 Meta Prompt 장점
+
+| 기존 방식 | Meta Prompt 방식 |
+|----------|-----------------|
+| 각 Agent 수동 작성 (몇 시간) | 워크플로우 정보 입력 (5분) |
+| 구조 파악 후 직접 코딩 | 템플릿 자동 적용 |
+| Agent 간 연동 수동 설정 | 오케스트레이터 자동 생성 |
+| 시행착오를 통한 최적화 | 검증된 베스트 프랙티스 적용 |
+
+---
+
+## 🛠️ 수동으로 Agent 만들기 (고급 사용자)
 
 ### Step 1: 전문 영역 정의
 ```markdown
@@ -376,7 +466,7 @@ git commit -m "feat: Add new social media strategist agent"
 
 ## 📥 Agent 다운로드 Links
 
-### 🎨 Instagram 캐러셀 제작팀 (전체 다운로드)
+### 🎨 Instagram Content Production
 
 **🎭 추천: 오케스트레이터 단독 사용**
 ```bash
@@ -399,7 +489,22 @@ curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/inst
 curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/slide-production-exporter.md
 ```
 
-**📦 전체 일괄 다운로드**
+### 🧭 Routing & Dispatch
+
+```bash
+# Instagram 콘텐츠 스타일 자동 라우팅
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/card-dispatcher.md
+```
+
+### 🛠️ Meta Tools
+
+```bash
+# 🔥 NEW! Agent 시스템 자동 생성기
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/claude-agent-builder-meta-prompt.md
+```
+
+### 📦 전체 일괄 다운로드
+
 ```bash
 # 모든 Agent 한 번에 다운로드
 curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/carousel-content-strategist.md
@@ -407,6 +512,8 @@ curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/inst
 curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-generator.md
 curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/instagram-carousel-orchestrator.md
 curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/slide-production-exporter.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/card-dispatcher.md
+curl -O https://raw.githubusercontent.com/junsungkim-lab/claude_skills/main/claude-agent-builder-meta-prompt.md
 ```
 
 ### 🚀 Claude에서 사용하는 방법
